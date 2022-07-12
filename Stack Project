@@ -1,0 +1,60 @@
+public boolean checkCorrectBracket(String s) {
+Stack<Character> st= new Stack<Character>();
+for(int i=0; i < s.length(); i++) {
+char c= s.charAt(i);
+switch (c) {
+    case '{':
+    case '[':
+    case '(':
+   st.push(c);
+   break;
+    case '}':
+    case ']':
+    case')':
+    if(!st.isEmpty()) {
+        char ch= st.pop();
+        ch == '{' && c != '}' ||
+        ch == '[' && c != ']' ||
+        ch == '(' && c != ')' || {
+System.out.println ("Not valid bracket: " + c);
+    return false;
+}
+
+ else {
+System.out.println("Not valid brackets");
+return false;
+}
+break;
+
+
+}
+if (!st.isEmpty() {
+System.out.println("Not valid Bracket");
+
+return false;
+
+return true;
+}}
+
+
+public class Stacks {
+    public static void main (String[] args) {
+        Stacks a= new Stacks();
+        
+        String st= "a[b+{c*(u-r)}]";
+        System.out.println(a.checkCorrectBracket(st));
+        
+        String st1= "a[b+{c*(u-r)}}]";
+        System.out.println(a.checkCorrectBracket(st));
+        
+        String st2= "a+b+c*u-r)}}]";
+        System.out.println(a.checkCorrectBracket(st));
+        
+        String st3= "a[[b+{c*(u-r)}}]]";
+        System.out.println(a.checkCorrectBracket(st));
+}
+
+    private boolean checkCorrectBracket(String st) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+}
